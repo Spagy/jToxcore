@@ -99,7 +99,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	@SuppressWarnings("unused")
 	private void onAction(int friendnumber, byte[] action) {
 		String actionString = JTox.getByteString(action);
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 
 		synchronized (this.onActionCallbacks) {
 			for (OnActionCallback<F> callback : this.onActionCallbacks) {
@@ -170,7 +170,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onConnectionStatus(int friendnumber, boolean online) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 		friend.setOnline(online);
 
 		synchronized (this.onConnectionStatusCallbacks) {
@@ -311,7 +311,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onFileControl(int friendnumber, int receive_send, int file_number, ToxFileControl control_type, byte[] data) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 		boolean sending;
 
 		if (receive_send == 1) {
@@ -386,7 +386,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onFileData(int friendnumber, int filenumber, byte[] data) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 
 		synchronized (this.onMessageCallbacks) {
 			for (OnFileDataCallback<F> cb : this.onFileDataCallbacks) {
@@ -454,7 +454,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onFileSendRequest(int friendnumber, int filenumber, long filesize, byte[] filename) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 
 		synchronized (this.onMessageCallbacks) {
 			for (OnFileSendRequestCallback<F> cb : this.onFileSendRequestCallbacks) {
@@ -522,7 +522,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onMessage(int friendnumber, byte[] message) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 		String messageString = JTox.getByteString(message);
 
 		synchronized (this.onMessageCallbacks) {
@@ -592,7 +592,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onNameChange(int friendnumber, byte[] newname) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 		String newnameString = JTox.getByteString(newname);
 		friend.setName(newnameString);
 
@@ -663,7 +663,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onReadReceipt(int friendnumber, int receipt) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 
 		synchronized (this.onReadReceiptCallbacks) {
 			for (OnReadReceiptCallback<F> cb : this.onReadReceiptCallbacks) {
@@ -733,7 +733,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	@SuppressWarnings("unused")
 	private void onStatusMessage(int friendnumber, byte[] statusmessage) {
 		String newStatus = JTox.getByteString(statusmessage);
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 		friend.setStatusMessage(newStatus);
 
 		synchronized (this.onStatusMessageCallbacks) {
@@ -803,7 +803,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onUserStatus(int friendnumber, ToxUserStatus status) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 		friend.setStatus(status);
 
 		synchronized (this.onUserStatusCallbacks) {
@@ -873,7 +873,7 @@ public class CallbackHandler<F extends ToxFriend> {
 	 */
 	@SuppressWarnings("unused")
 	private void onTypingChange(int friendnumber, boolean isTyping) {
-		F friend = this.friendlist.getByFriendNumber(friendnumber);
+		F friend = this.friendlist.getByFriendnumber(friendnumber);
 		friend.setTyping(isTyping);
 
 		synchronized (this.onTypingChangeCallbacks) {

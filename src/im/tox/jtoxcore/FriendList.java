@@ -40,7 +40,7 @@ public interface FriendList<F extends ToxFriend> {
 	 * @return the first friend in the list with the specified friendnumber.
 	 *         Null if no such friend exists.
 	 */
-	F getByFriendNumber(int friendnumber);
+	F getByFriendnumber(int friendnumber);
 
 	/**
 	 * Retrieve a friend by its client id.

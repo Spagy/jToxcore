@@ -974,7 +974,7 @@ public class JTox<F extends ToxFriend> {
 			throw new ToxException(ToxError.TOX_UNKNOWN);
 		}
 
-		this.friendList.getByFriendNumber(friendnumber).setId(result);
+		this.friendList.getByFriendnumber(friendnumber).setId(result);
 	}
 
 	/**
@@ -1010,7 +1010,7 @@ public class JTox<F extends ToxFriend> {
 			throw new ToxException(ToxError.TOX_UNKNOWN);
 		}
 
-		F friend = this.friendList.getByFriendNumber(friendnumber);
+		F friend = this.friendList.getByFriendnumber(friendnumber);
 
 		if (result == 0) {
 			friend.setOnline(false);
@@ -1087,7 +1087,7 @@ public class JTox<F extends ToxFriend> {
 			throw new ToxException(ToxError.TOX_UNKNOWN);
 		}
 
-		this.friendList.getByFriendNumber(friendnumber).setName(getByteString(name));
+		this.friendList.getByFriendnumber(friendnumber).setName(getByteString(name));
 	}
 
 	/**
@@ -1127,7 +1127,7 @@ public class JTox<F extends ToxFriend> {
 			throw new ToxException(ToxError.TOX_UNKNOWN);
 		}
 
-		this.friendList.getByFriendNumber(friendnumber).setStatusMessage(getByteString(status));
+		this.friendList.getByFriendnumber(friendnumber).setStatusMessage(getByteString(status));
 	}
 
 	/**
@@ -1162,7 +1162,7 @@ public class JTox<F extends ToxFriend> {
 			this.lock.unlock();
 		}
 
-		this.friendList.getByFriendNumber(friendnumber).setStatus(status);
+		this.friendList.getByFriendnumber(friendnumber).setStatus(status);
 	}
 
 	/**
@@ -1190,7 +1190,7 @@ public class JTox<F extends ToxFriend> {
 			this.lock.unlock();
 		}
 
-		this.friendList.getByFriendNumber(friendnumber).setTyping(result);
+		this.friendList.getByFriendnumber(friendnumber).setTyping(result);
 	}
 
 	/****** GROUP CHAT FUNCTIONS ******/
